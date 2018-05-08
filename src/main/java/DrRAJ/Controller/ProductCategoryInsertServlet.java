@@ -54,7 +54,6 @@ public class ProductCategoryInsertServlet extends HttpServlet {
 		} else {
 			productCategoryBean.setProductCategoryId(GenrateMathodsUtils.getRandomString(15));
 			if (new ProductCategoryDAO().insert(productCategoryBean)) {
-				System.out.println("Hello in Category");
 				request.getServletContext().removeAttribute("productCategoryMap");
 				HashMap<String, ArrayList<ProductBean>> productCategoryMap = new ProductCategoryDAO().getCategoryMap();
 				request.getServletContext().setAttribute("productCategoryMap", productCategoryMap);

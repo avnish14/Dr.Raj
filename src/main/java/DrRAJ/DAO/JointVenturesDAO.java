@@ -28,7 +28,6 @@ public class JointVenturesDAO {
 				pstmt.setString(2, jointVenturesBean.getName());
 				pstmt.setString(3, jointVenturesBean.getImageLink());
 				pstmt.setString(4, jointVenturesBean.getForwardLink());
-				System.out.println(jointVenturesBean.getId() + " " + jointVenturesBean.getImageLink() + " "  + jointVenturesBean.getForwardLink() + " "  + jointVenturesBean.getName());
 				int rowsAffected = pstmt.executeUpdate();
 				if (rowsAffected > 0) {
 					result = true;
@@ -230,9 +229,5 @@ public class JointVenturesDAO {
 
 		}
 		return result;
-	}
-
-	public static void main(String[] args) {
-		System.out.println(new JointVenturesDAO().getListMap().size());
 	}
 }

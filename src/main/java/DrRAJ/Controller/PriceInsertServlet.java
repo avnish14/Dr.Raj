@@ -23,7 +23,6 @@ public class PriceInsertServlet extends HttpServlet {
 		String productId = request.getParameter("txtProductId");
 		String packageSize = request.getParameter("txtDummy");
 
-		System.out.println(packageSize + "HI");
 
 		boolean isError = false;
 

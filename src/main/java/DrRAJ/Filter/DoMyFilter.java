@@ -94,20 +94,16 @@ public class DoMyFilter implements Filter {
 						request.getServletContext().setAttribute("productDosageMap", productDosageMap);
 						request.getServletContext().setAttribute("ingredientMap", ingredientMap);
 						request.getServletContext().setAttribute("jointVenturesMap", jointVenturesMap);
-						System.out.println("Hiii");
 					}
 					if (remediesMap.containsKey(s[2])) {
-						System.out.println(" S2 " + s[2]);
 						RemediesBean remediesbean = remediesMap.get(s[2]);
 						if (remediesbean != null) {
 							request.setAttribute("remediesbean", remediesbean);
-							System.out.println("Remedies");
 							String str = "/RemediesDetails.jsp";
 							request.getRequestDispatcher(str).forward(request, response);
 						}
 					} else if (productCategoryMap.containsKey(s[2])) {
 						ArrayList<ProductBean> categoryBean = productCategoryMap.get(s[2]);
-						System.out.println("Product Category");
 						request.setAttribute("categoryBean", categoryBean);
 						String str = "/ProductCategory.jsp";
 						request.getRequestDispatcher(str).forward(request, response);
@@ -116,7 +112,6 @@ public class DoMyFilter implements Filter {
 						if (bean != null) {
 							request.setAttribute("bean", bean);
 							String str = "/Product.jsp";
-							System.out.println("Product");
 							request.getRequestDispatcher(str).forward(request, response);
 						}
 					} else if (s[2].equalsIgnoreCase("buddhism-meditation")
@@ -133,7 +128,6 @@ public class DoMyFilter implements Filter {
 						if (bookBean != null) {
 							request.setAttribute("bean", bookBean);
 							String str = "/BookDetails.jsp";
-							System.out.println("Book");
 							request.getRequestDispatcher(str).forward(request, response);
 						}
 					}
@@ -143,17 +137,14 @@ public class DoMyFilter implements Filter {
 						if (jointVenturesBean != null) {
 							request.setAttribute("jointVenturesBean", jointVenturesBean);
 							String str = "/JointVenturesDetails.jsp";
-							System.out.println("JointVentures");
 							request.getRequestDispatcher(str).forward(request, response);
 						} else {
 							request.getRequestDispatcher("404.jsp").forward(request, response);
 						}
 					} else {
-						//System.out.println(" S2 in second Last Else" + s[2]);
 						chain.doFilter(request, response);
 					}
 				} else {
-					//System.out.println(" S2 in last Else " + s[2]);
 					chain.doFilter(request, response);
 				}
 			}

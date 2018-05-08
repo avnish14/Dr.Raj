@@ -29,9 +29,6 @@ public class JointVenturesURLDetailsUpdateServlet extends HttpServlet {
 		String content = request.getParameter("txtContent");
 		String jointVenturesId = request.getParameter("jointVenturesId");
 		String id = request.getParameter("id");
-		System.out.println("Helloooooooooo");
-
-		System.out.println("jointVenturesId " + jointVenturesId);
 
 		JointventuresURLDetailsBean jointVenturesURLDetailsBean = new JointventuresURLDetailsBean();
 		jointVenturesURLDetailsBean.setId(id);
@@ -78,11 +75,9 @@ public class JointVenturesURLDetailsUpdateServlet extends HttpServlet {
 		}
 
 		if (isError) {
-			System.out.println("hiiiiiiii");
 			request.setAttribute("jointVenturesURLDetailsBean", jointVenturesURLDetailsBean);
 			request.getRequestDispatcher("JointVenturesURLDetailsEdit.jsp").forward(request, response);
 		} else {
-			System.out.println("Hello");
 			if (new JointVenturesURLDetailsDAO().update(jointVenturesURLDetailsBean)) {
 				request.getServletContext().removeAttribute("jointVenturesMap");
 				HashMap<String, JointVenturesBean> jointVenturesMap = new JointVenturesDAO().getListMap();

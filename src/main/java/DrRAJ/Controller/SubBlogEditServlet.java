@@ -17,7 +17,6 @@ public class SubBlogEditServlet extends HttpServlet {
 		SubBlogBean bean = new SubBlogDAO().getByPK(subBlogId);
 
 		if (bean != null) {
-			System.out.println(bean.getSubBlogId());
 			request.setAttribute("subBlogBean", bean);
 			request.getRequestDispatcher("SubBlogEdit.jsp").forward(request, response);
 		} else {

@@ -22,7 +22,6 @@ public class JointVenturesURLDetailsEditServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
-		System.out.println("Hi.............");
 		JointventuresURLDetailsBean bean = new JointVenturesURLDetailsDAO().getByPK(id);
 		if (bean != null) {
 			request.getServletContext().removeAttribute("jointVenturesMap");

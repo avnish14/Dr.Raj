@@ -29,7 +29,6 @@ public class BookInsertServlet extends HttpServlet {
 		String photoLink = request.getParameter("txtBookPhotoLink");
 		String urlLink = request.getParameter("txtBookURLLink");
 
-		System.out.println(type + " TYPE");
 		
 		BookBean bean = new BookBean();
 		boolean isError = false;

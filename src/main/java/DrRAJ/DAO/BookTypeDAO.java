@@ -238,8 +238,5 @@ public class BookTypeDAO {
 		return types;
 
 	}
-	public static void main(String[] args) {
-		System.out.println(new BookTypeDAO().getTypes("Mind,Body & Spirit"));
-		System.out.println(new BookTypeDAO().getTypes("Homeopathic Self-Help"));
-	}
+	
 }

@@ -215,7 +215,6 @@ public class BlogDAO {
 	public ArrayList<BookBean> getBySubtypes(String type) {
 
 		String subtype = new BookTypeDAO().getTypes(type).toString();
-		System.out.println(subtype.substring(1, subtype.length() - 1));
 		ArrayList<BookBean> list = new ArrayList<BookBean>();
 		conn = (Connection) DBConnection.getConnection();
 		if (conn != null) {
@@ -250,7 +249,6 @@ public class BlogDAO {
 				}
 			}
 		}
-		System.out.println(list.size());
 		return list;
 
 	}

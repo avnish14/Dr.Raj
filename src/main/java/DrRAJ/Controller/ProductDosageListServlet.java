@@ -18,7 +18,6 @@ public class ProductDosageListServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		List<ProductDosageBean> listOfProductDosage = new ProductDosageDAO().getList();
-		System.out.println(listOfProductDosage.size());
 		if (listOfProductDosage != null) {
 			request.setAttribute("listOfProductDosage", listOfProductDosage);
 			request.getRequestDispatcher("ProductDosageList.jsp").forward(request, response);

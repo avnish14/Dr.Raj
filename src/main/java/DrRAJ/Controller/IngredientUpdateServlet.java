@@ -64,7 +64,6 @@ public class IngredientUpdateServlet extends HttpServlet {
 			bean.setDescription(description);
 			bean.setIngredientsId(ingredientId);
 			request.setAttribute("ingreadientBean", bean);
-			System.out.println("Sss0");
 			request.getRequestDispatcher("IngredientEdit.jsp").forward(request, response);
 		} else {
 			bean.setIngredientsId(ingredientId);

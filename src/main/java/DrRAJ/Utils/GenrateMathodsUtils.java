@@ -86,9 +86,4 @@ public class GenrateMathodsUtils {
 		String temp[] = date.split("-");
 		return temp[1] + "/" + temp[2] + "/" + temp[0];
 	}
-	
-	public static void main(String[] args) {
-		System.out.println(GenrateMathodsUtils.makeSHA512("sharvil"));
-	}
-
 }

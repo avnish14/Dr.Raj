@@ -20,7 +20,6 @@ public class BookTypeUpdateServlet extends HttpServlet {
 		BookTypeBean bookTypeBean = new BookTypeBean();
 
 		boolean isError = false;
-		System.out.println(bookTypeName + " BookTypeName");
 		if (ValidationUtils.isEmpty(bookTypeName)) {
 			isError = true;
 			request.setAttribute("bookTypeName", "<font color=red>* BookType Name is Required</font>");

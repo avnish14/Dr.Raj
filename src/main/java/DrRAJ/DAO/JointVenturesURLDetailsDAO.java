@@ -23,7 +23,6 @@ public class JointVenturesURLDetailsDAO {
 			String insertSQL = "INSERT INTO jointventuresurldetails(id,subTitle,content,pdfLink,pdfName,jointVenturesId)"
 					+ " values(?,?,?,?,?,?)";
 			try {
-				System.out.println("Helloooooooooooo");
 				connection.setAutoCommit(false);
 				pstmt = connection.prepareStatement(insertSQL);
 				pstmt.setString(1, jointventuresURLDetailsBean.getId());
@@ -208,7 +207,6 @@ public class JointVenturesURLDetailsDAO {
 
 	public boolean update(JointventuresURLDetailsBean jointventuresURLDetailsBean) {
 		connection = DBConnection.getConnection();
-		System.out.println(jointventuresURLDetailsBean.getJointVenturesId() + "ID");
 		if (connection != null) {
 			String updateSQL = "UPDATE jointventuresurldetails set subTitle=?,pdfLink=?,pdfName=?,content=?,jointVenturesId=? WHERE id=?";
 
@@ -222,7 +220,6 @@ public class JointVenturesURLDetailsDAO {
 				pstmt.setString(5, jointventuresURLDetailsBean.getJointVenturesId());
 				pstmt.setString(6, jointventuresURLDetailsBean.getId());
 				int rowsAffected = pstmt.executeUpdate();
-				System.out.println("Hi");
 				if (rowsAffected > 0) {
 					result = true;
 

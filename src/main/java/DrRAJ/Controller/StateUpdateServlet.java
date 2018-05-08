@@ -20,7 +20,6 @@ public class StateUpdateServlet extends HttpServlet {
 		StateBean stateBean = new StateBean();
 
 		boolean isError = false;
-		System.out.println(stateName + " StateName");
 		if (ValidationUtils.isEmpty(stateName)) {
 			isError = true;
 			request.setAttribute("stateName", "<font color=red>* State Name is Required</font>");

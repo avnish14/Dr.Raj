@@ -216,7 +216,6 @@ public class JointVenturesDetailsDAO {
 				pstmt.setString(4, jointVenturesDetailsBean.getJointVenturesId());
 				pstmt.setString(5, jointVenturesDetailsBean.getId());
 				int rowsAffected = pstmt.executeUpdate();
-				System.out.println("Hi");
 				if (rowsAffected > 0) {
 					result = true;
 

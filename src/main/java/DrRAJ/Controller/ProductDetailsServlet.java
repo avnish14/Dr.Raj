@@ -17,7 +17,6 @@ public class ProductDetailsServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String url = request.getParameter("productId");
-		System.out.println(url + " URL");
 		ProductBean product = new ProductDAO().getByURL(url);
 		new ProductDAO().cntIncrement(url);
 		if (product != null) {

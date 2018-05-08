@@ -18,7 +18,6 @@ public class ProductCompositionListServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		List<ProductCompositionBean> listOfProductComposition = new ProductCompositionDAO().getList();
-		System.out.println(listOfProductComposition.size());
 		if (listOfProductComposition != null) {
 			request.setAttribute("listOfProductComposition", listOfProductComposition);
 			request.getRequestDispatcher("ProductCompositionList.jsp").forward(request, response);

@@ -19,7 +19,6 @@ public class PriceDAO {
 
 	public boolean insert(String packageSize, String productId) {
 		String price[] = packageSize.split("~");
-		System.out.println(packageSize + "PACKAGE");
 		int min = 0;
 		for (int i = 0; i < price.length; i++) {
 			conn = DBConnection.getConnection();
@@ -27,14 +26,12 @@ public class PriceDAO {
 			if (conn != null) {
 				String insertSQL = "INSERT INTO price(priceId,productId,price,packageSize) values(?,?,?,?)";
 				try {
-					System.out.println(price[i] + " PR");
 					String temp[] = price[i].split("=");
 					if (min == 0) {
 						min = Integer.parseInt(temp[1]);
 					} else if (Integer.parseInt(temp[1]) < min) {
 						min = Integer.parseInt(temp[1]);
 					}
-					System.out.println(temp[0] + " <- TEMP ->" + temp[1]);
 					pstmt = conn.prepareStatement(insertSQL);
 					pstmt.setString(1, GenrateMathodsUtils.getRandomString(15));
 					pstmt.setString(2, productId);

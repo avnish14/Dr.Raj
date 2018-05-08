@@ -20,7 +20,6 @@ public class ReletedProductInsertServlet extends HttpServlet {
 
 		String productId = request.getParameter("txtProductId");
 		String relatedProducts = request.getParameter("txtDummy");
-		System.out.println(relatedProducts+ "RELATED");
 		RelatedProductBean relatedProductBean = new RelatedProductBean();
 
 		boolean isError = false;

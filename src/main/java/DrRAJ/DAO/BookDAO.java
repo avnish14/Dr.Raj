@@ -307,21 +307,15 @@ public class BookDAO {
 		if(type.contains("-")){
 			String temp [] = type.split("-");
 			type="";
-			System.out.println(temp.length);
 			for(int i=0;i<temp.length;i++){
-				System.out.println(temp[i]);
 				type+= temp[i] + " ";
 			}
 			type = type.substring(0,type.length()-1);
 		}
-		System.out.println(type);
-
-		
 		ArrayList<BookBean> list = new ArrayList<BookBean>();
 		conn = (Connection) DBConnection.getConnection();
 		if (conn != null) {
 			String sql = "select * from book where type='" + type + "'";
-			System.out.println(sql + " SQL");
 			PreparedStatement statement;
 			try {
 				statement = conn.prepareStatement(sql);
@@ -352,16 +346,9 @@ public class BookDAO {
 				}
 			}
 		}
-		System.out.println(list.size());
 		return list;
 
 	}
 
-	/*public static void main(String[] args) {
-		// new BookDAO().getBySubtypes("Mind,Body & Spirit");
-		ArrayList<BookBean> bean = new BookDAO().getBySubtypes("Yoga");
-		// System.out.println(bean.get(0).getDescription());
-
-	}*/
 
 }

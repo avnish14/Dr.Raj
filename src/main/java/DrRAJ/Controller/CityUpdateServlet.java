@@ -37,7 +37,6 @@ public class CityUpdateServlet extends HttpServlet {
 			request.setAttribute("txtCityName", cityName);
 			cityBean.setCityName(cityName);
 		}
-		System.out.println(stateName);
 		if (stateName.equals("0")) {
 			isError = true;
 			request.setAttribute("stateName", "<font color=red>* State Name is Required</font>");

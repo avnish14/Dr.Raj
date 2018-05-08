@@ -22,11 +22,6 @@ public class PressInfoUpdateServlet extends HttpServlet {
 		String pressInfoId = request.getParameter("pressInfoId");
 		String title = request.getParameter("txtTitle");
 		String urlLink = request.getParameter("txtURLLink");
-		System.out.println(pressInfoId);
-		
-		System.out.println(pressInfoId);
-		System.out.println(pressInfoId);
-		System.out.println(pressInfoId);
 
 		PressInfoBean bean = new PressInfoBean();
 		bean.setPressInfoId(pressInfoId);

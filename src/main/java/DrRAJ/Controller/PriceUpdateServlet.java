@@ -25,7 +25,6 @@ public class PriceUpdateServlet extends HttpServlet {
 		String txtprice = request.getParameter("txtPackagePrice");
 		String priceId = request.getParameter("priceId");
 
-		System.out.println(priceId + " " + packageSize + " " + txtprice + " " + priceId+" kjkkjh");
 
 		PriceBean bean = new PriceBean();
 		bean.setPriceId(priceId);
@@ -60,7 +59,6 @@ public class PriceUpdateServlet extends HttpServlet {
 
 		if (isError) {
 			request.setAttribute("priceBean", bean);
-			System.out.println(priceId + " " + packageSize + " " + txtprice + " " + priceId+ " df");
 			request.getRequestDispatcher("PriceEdit.jsp").forward(request, response);
 		} else {
 

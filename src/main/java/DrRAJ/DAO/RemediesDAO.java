@@ -77,7 +77,6 @@ public class RemediesDAO {
 					remedies.setName(rs.getString("name"));
 					remedies.setForwardLink(rs.getString("forwardLink"));
 				}
-				System.out.println("HI");
 				return remedies;
 
 			} catch (SQLException e) {
@@ -93,7 +92,6 @@ public class RemediesDAO {
 			}
 		}
 
-		System.out.println("Hello");
 		return null;
 	}
 

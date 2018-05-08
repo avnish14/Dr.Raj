@@ -122,7 +122,6 @@ public class ProductCategoryDAO {
 	}
 
 	public ArrayList<ProductBean> getByURL(String productCategoryURL) {
-		System.out.println("Hello");
 		connection = DBConnection.getConnection();
 		ArrayList<ProductBean> list = new ArrayList<ProductBean>();
 		ProductBean productBean = null;
@@ -157,8 +156,6 @@ public class ProductCategoryDAO {
 					productBean.setCnt(rs.getInt("cnt") + "");
 					productBean.setMinPrice(rs.getString("minPrice"));
 					productBean.setRate(new ProductDAO().getAvgReview(productBean.getProductId()));
-					System.out.println(productBean.getRate() + " Rate");
-					//System.out.println(productBean.getMinPrice() + " Price");
 					list.add(productBean);
 				}
 				return list;
@@ -196,7 +193,6 @@ public class ProductCategoryDAO {
 				// Iterate Map
 				for (String name : map.keySet())
 					map.put(name, getByURL(name));
-				System.out.println(map.size());
 				return map;
 
 			} catch (SQLException e) {
@@ -316,7 +312,4 @@ public class ProductCategoryDAO {
 		return result;
 	}
 
-	public static void main(String[] args) {
-		System.out.println(new ProductCategoryDAO().getCategoryMap().get("drops").size());
-	}
 }

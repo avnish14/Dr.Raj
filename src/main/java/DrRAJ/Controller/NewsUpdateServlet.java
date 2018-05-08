@@ -57,7 +57,6 @@ public class NewsUpdateServlet extends HttpServlet {
 			// newsBean.setContent(content);
 			// newsBean.setPhotoLink(photoLink);
 			// newsBean.setNewsId(newsId);
-			System.out.println("HI");
 			request.setAttribute("newsBean", newsBean);
 			request.getRequestDispatcher("NewsEdit.jsp").forward(request, response);
 		} else {

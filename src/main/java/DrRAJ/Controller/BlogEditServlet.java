@@ -17,7 +17,6 @@ public class BlogEditServlet extends HttpServlet {
 		BlogBean bean = new BlogDAO().getByPK(blogId);
 
 		if (bean != null) {
-			System.out.println(bean.getBlogId());
 			request.setAttribute("blogBean", bean);
 			request.getRequestDispatcher("BlogEdit.jsp").forward(request, response);
 		} else {

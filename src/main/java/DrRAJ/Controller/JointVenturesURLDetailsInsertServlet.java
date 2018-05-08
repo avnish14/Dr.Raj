@@ -75,7 +75,6 @@ public class JointVenturesURLDetailsInsertServlet extends HttpServlet {
 			request.getRequestDispatcher("JointVenturesURLDetailsInsert.jsp").forward(request, response);
 		} else {
 			jointVenturesURLDetailsBean.setId(GenrateMathodsUtils.getRandomString(15));
-			System.out.println("Hello");
 			if (new JointVenturesURLDetailsDAO().insert(jointVenturesURLDetailsBean)) {
 				request.getServletContext().removeAttribute("jointVenturesMap");
 				HashMap<String, JointVenturesBean> jointVenturesMap = new JointVenturesDAO().getListMap();

@@ -57,7 +57,6 @@ public class CompanyManagementUpdateServlet extends HttpServlet {
 			// companyManagementBean.setName(name);
 			// companyManagementBean.setPhotoLink(photoLink);
 			// companyManagementBean.setCompanyManagementId(companyManagementId);
-			System.out.println("HI");
 			request.setAttribute("companyManagementBean", companyManagementBean);
 			request.getRequestDispatcher("CompanyManagementEdit.jsp").forward(request, response);
 		} else {

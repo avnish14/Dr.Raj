@@ -20,7 +20,6 @@ public class PressInfoTypeUpdateServlet extends HttpServlet {
 		PressInfoTypeBean pressInfoTypeBean = new PressInfoTypeBean();
 
 		boolean isError = false;
-		System.out.println(pressInfoTypeName + " PressInfoTypeName");
 		if (ValidationUtils.isEmpty(pressInfoTypeName)) {
 			isError = true;
 			request.setAttribute("pressInfoTypeName", "<font color=red>* PressInfoType Name is Required</font>");

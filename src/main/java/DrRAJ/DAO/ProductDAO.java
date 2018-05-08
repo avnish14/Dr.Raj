@@ -33,8 +33,6 @@ public class ProductDAO {
 				statement.setString(1, (new ProductDAO().getCnt(productURL) + 1) + "");
 				statement.setString(2, productURL);
 				int a = statement.executeUpdate();
-				if (a > 0)
-					System.out.println(new ProductDAO().getCnt(productURL));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -444,7 +442,6 @@ public class ProductDAO {
 					product.setMinPrice(rs.getString("minPrice"));
 					product.setRate(new ProductDAO().getAvgReview(product.getProductId()));
 				}
-				System.out.println("HI");
 				return product;
 
 			} catch (SQLException e) {
@@ -460,7 +457,6 @@ public class ProductDAO {
 			}
 		}
 
-		System.out.println("Hello");
 		return null;
 	}
 
@@ -889,7 +885,6 @@ public class ProductDAO {
 	}
 
 	public HashMap<String, ArrayList<ProductIndicationBean>> getIndication() {
-		System.out.println("First Time in indication");
 		HashMap<String, ArrayList<ProductIndicationBean>> map = new HashMap<String, ArrayList<ProductIndicationBean>>();
 		connection = DBConnection.getConnection();
 		if (connection != null) {
@@ -918,7 +913,6 @@ public class ProductDAO {
 	}
 
 	public HashMap<String, ArrayList<ProductCompositionBean>> getComposition() {
-		System.out.println("First Time in composition");
 		HashMap<String, ArrayList<ProductCompositionBean>> map = new HashMap<String, ArrayList<ProductCompositionBean>>();
 		connection = DBConnection.getConnection();
 		if (connection != null) {
@@ -927,7 +921,6 @@ public class ProductDAO {
 				pstmt = connection.prepareStatement(selectSQL);
 				rs = pstmt.executeQuery();
 				while (rs.next()) {
-					System.out.println("HI");
 					map.put(rs.getString("productId"), null);
 				}
 
@@ -948,7 +941,6 @@ public class ProductDAO {
 	}
 
 	public HashMap<String, ArrayList<PriceBean>> getPrice() {
-		System.out.println("First Time in Price");
 		HashMap<String, ArrayList<PriceBean>> map = new HashMap<String, ArrayList<PriceBean>>();
 		connection = DBConnection.getConnection();
 		if (connection != null) {
@@ -977,7 +969,6 @@ public class ProductDAO {
 	}
 
 	public HashMap<String, ArrayList<ProductDosageBean>> getDosage() {
-		System.out.println("First Time in Dosage");
 		HashMap<String, ArrayList<ProductDosageBean>> map = new HashMap<String, ArrayList<ProductDosageBean>>();
 		connection = DBConnection.getConnection();
 		if (connection != null) {
@@ -992,7 +983,6 @@ public class ProductDAO {
 				for (String str : map.keySet()) {
 					map.put(str, getDosage(str));
 				}
-				System.out.println(map.size() + "SIZE");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
@@ -1007,7 +997,6 @@ public class ProductDAO {
 	}
 
 	public HashMap<String, ArrayList<IngredientBean>> getIngredient() {
-		System.out.println("First Time in Ingredient");
 		HashMap<String, ArrayList<IngredientBean>> map = new HashMap<String, ArrayList<IngredientBean>>();
 		connection = DBConnection.getConnection();
 		if (connection != null) {
@@ -1060,17 +1049,4 @@ public class ProductDAO {
 
 		return null;
 	}
-
-	public static void main(String[] args) {
-
-		System.out.println(new ProductDAO().getAvgReview("S9iSjr9zqjcc3yj"));
-
-		/*
-		 * System.out.println( new ProductDAO().getProductMap().get(
-		 * "hair-care-super-haircare-hair-fall-hair-growth").getImageLink());
-		 */
-		// System.out.println(new ProductDAO().getIndication().size());
-	}
-	// SELECT * from product WHERE remediesId in (SELECT remediesId FROM
-	// `product` WHERE productId='rrpcVVVHTVU1eHp')
 }

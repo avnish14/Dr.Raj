@@ -145,10 +145,8 @@ public class PressInfoTypeDAO {
 				while (rs.next()) {
 					map.put(rs.getString("name"), null);
 				}
-				System.out.println(map.size());
 				for(String str : map.keySet()){
 					map.put(str, getList(str));
-					System.out.println(map.get(str).size());
 				}
 
 			} catch (SQLException e) {
@@ -293,7 +291,4 @@ public class PressInfoTypeDAO {
 		return result;
 	}
 	
-	public static void main(String[] args) {
-		System.out.println(new PressInfoTypeDAO().getListMap().size());
-	}
 }

@@ -28,7 +28,6 @@ public class ReletedProductDAO {
 			String arr[] = relatedProducts.split(" ");
 
 			for (int i = 0; i < arr.length; i++) {
-				System.out.println(arr[i] + "Hiiii");
 				String insertSQL = "INSERT INTO relatedproduct(relatedProductId,relatedId,productId)"
 						+ " values(?,?,?)";
 				try {
@@ -37,7 +36,6 @@ public class ReletedProductDAO {
 					pstmt.setString(2, arr[i]);
 					pstmt.setString(3, bean.getProductId());
 
-					System.out.println("Inserted");
 					int rowsAffected = pstmt.executeUpdate();
 					if (rowsAffected > 0) {
 						result = true;
@@ -205,8 +203,6 @@ public class ReletedProductDAO {
 				pstmt.setString(1, relatedProductBean.getReletedId());
 				pstmt.setString(2, relatedProductBean.getProductId());
 				pstmt.setString(3, relatedProductBean.getReletedProductId());
-				System.out.println(relatedProductBean.getReletedId() + " " + relatedProductBean.getProductId() + " "
-						+ relatedProductBean.getReletedProductId());
 				int rowsAffected = pstmt.executeUpdate();
 				if (rowsAffected > 0) {
 					result = true;

@@ -28,9 +28,6 @@ public class BookUpdateServlet extends HttpServlet {
 		BookBean bean = new BookBean();
 		bean.setBookId(bookId);
 
-		System.out.println(name + " " + type + " " + author);
-		System.out.println(isbn + " " + description + " " + photoLink);
-		System.out.println(urlLink + " " + bookId);
 		boolean isError = false;
 		if (ValidationUtils.isEmpty(name)) {
 			isError = true;
@@ -106,7 +103,6 @@ public class BookUpdateServlet extends HttpServlet {
 		}
 
 		if (isError) {
-			System.out.println("csndlnk");
 			request.setAttribute("bookBean", bean);
 			request.getRequestDispatcher("BookEdit.jsp").forward(request, response);
 		} else {

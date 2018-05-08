@@ -51,7 +51,6 @@ public class AdminDAO {
 				pstmt = connection.prepareStatement(sql);
 				pstmt.setString(1, adminEmail);
 				pstmt.setString(2, GenrateMathodsUtils.makeSHA512(adminPassword));
-				System.out.println("HI");
 				ResultSet rs = pstmt.executeQuery();
 
 				while (rs.next()) {

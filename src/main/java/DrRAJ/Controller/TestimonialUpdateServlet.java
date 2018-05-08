@@ -26,7 +26,6 @@ public class TestimonialUpdateServlet extends HttpServlet {
 		testimonialBean.setTestimonialId(testimonialId);
 		boolean isError = false;
 
-		System.out.println(name + " \n" + photoLink + "'n" + description + "\n"  + testimonialId);
 		
 		
 		if (ValidationUtils.isEmpty(name)) {
@@ -58,7 +57,6 @@ public class TestimonialUpdateServlet extends HttpServlet {
 //			testimonialBean.setName(name);
 //			testimonialBean.setPhotoLink(photoLink);
 //			testimonialBean.setTestimonialId(testimonialId);
-			System.out.println("HI");
 			request.setAttribute("testimonialBean", testimonialBean);
 			request.getRequestDispatcher("TestimonialEdit.jsp").forward(request, response);
 		} else {

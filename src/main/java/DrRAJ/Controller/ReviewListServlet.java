@@ -17,7 +17,6 @@ public class ReviewListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ArrayList<ReviewBean> list = (ArrayList<ReviewBean>) new ReviewDAO().getList();
-		System.out.println(list.size());
 		if (list != null) {
 			request.setAttribute("reviewList", list);
 			request.getRequestDispatcher("ReviewList.jsp").forward(request, response);
