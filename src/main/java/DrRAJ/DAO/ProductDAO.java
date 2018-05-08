@@ -286,10 +286,8 @@ public class ProductDAO {
 					product.setRemediesImageLink(rs.getString("photoLink"));
 					product.setMinPrice(rs.getString("minPrice"));
 					product.setRate(new ProductDAO().getAvgReview(product.getProductId()));
-					System.out.println(product.getRate() + " Rate");
 					map.put(product.getProductURL(), product);
 				}
-				System.out.println(map.size());
 				return map;
 			} catch (SQLException e) {
 				e.printStackTrace();
